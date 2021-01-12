@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3d9c0a5d-adb6-4353-890b-2e3417db3fef" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="demo" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$MAVEN_REPOSITORY$" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1lM6Cxf30oMorQlCMcPQaUmAYfL" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="XML" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../downloads/DesignPatterns-master" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.demo.config" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d9c0a5d-adb6-4353-890b-2e3417db3fef" name="Default Changelist" comment="" />
+      <created>1607394488494</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607394488494</updated>
+      <workItem from="1607394492513" duration="21775000" />
+      <workItem from="1607423052173" duration="453000" />
+      <workItem from="1607430888902" duration="4296000" />
+      <workItem from="1607474376825" duration="18293000" />
+      <workItem from="1607507082650" duration="3067000" />
+      <workItem from="1607510178649" duration="4030000" />
+      <workItem from="1607519230173" duration="6453000" />
+      <workItem from="1607560991249" duration="6739000" />
+      <workItem from="1607567923393" duration="24495000" />
+      <workItem from="1607602555953" duration="2694000" />
+      <workItem from="1607646915919" duration="31395000" />
+      <workItem from="1607692737517" duration="10327000" />
+      <workItem from="1607736787489" duration="17534000" />
+      <workItem from="1607761894918" duration="4423000" />
+      <workItem from="1607868519806" duration="10000" />
+      <workItem from="1607911738061" duration="17594000" />
+      <workItem from="1607947738128" duration="412000" />
+      <workItem from="1608003933963" duration="1551000" />
+      <workItem from="1608079481067" duration="29194000" />
+      <workItem from="1608165595913" duration="21759000" />
+      <workItem from="1608209239320" duration="1482000" />
+      <workItem from="1608212576487" duration="3066000" />
+      <workItem from="1608252844754" duration="15448000" />
+      <workItem from="1608457484110" duration="1891000" />
+      <workItem from="1608472989146" duration="165000" />
+      <workItem from="1608474238056" duration="10000" />
+      <workItem from="1608474268302" duration="327000" />
+      <workItem from="1608511834610" duration="501000" />
+      <workItem from="1608517580985" duration="651000" />
+      <workItem from="1608518652787" duration="1809000" />
+      <workItem from="1608600343193" duration="870000" />
+      <workItem from="1608683936779" duration="25227000" />
+      <workItem from="1608729053678" duration="286000" />
+      <workItem from="1608802998526" duration="2165000" />
+      <workItem from="1608823076295" duration="693000" />
+      <workItem from="1608861601561" duration="1246000" />
+      <workItem from="1608874871781" duration="8169000" />
+      <workItem from="1608972205829" duration="4127000" />
+      <workItem from="1608981439616" duration="599000" />
+      <workItem from="1609031655895" duration="1258000" />
+      <workItem from="1609125063265" duration="803000" />
+      <workItem from="1609125890131" duration="17385000" />
+      <workItem from="1609159059863" duration="768000" />
+      <workItem from="1609207560209" duration="4601000" />
+      <workItem from="1609227608001" duration="26000" />
+      <workItem from="1609230979674" duration="545000" />
+      <workItem from="1609391068843" duration="1439000" />
+      <workItem from="1609485475355" duration="3604000" />
+      <workItem from="1609493217623" duration="1153000" />
+      <workItem from="1609723970087" duration="632000" />
+      <workItem from="1609941164101" duration="1257000" />
+      <workItem from="1609982067056" duration="936000" />
+      <workItem from="1610188874175" duration="90000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="userVO.user" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
