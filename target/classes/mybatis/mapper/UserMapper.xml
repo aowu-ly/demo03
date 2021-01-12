@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.dao.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.demo.bean.User" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="gender" property="gender" jdbcType="VARCHAR" />
+        <result column="age" property="age" jdbcType="INTEGER" />
+        <result column="entry_date" property="entryDate" jdbcType="VARCHAR" />
+        <result column="email" property="email" jdbcType="VARCHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="orientation" property="orientation" jdbcType="VARCHAR" />
+        <result column="province_value" property="provinceValue" jdbcType="VARCHAR" />
+        <result column="city_value" property="cityValue" jdbcType="VARCHAR" />
+        <result column="region_value" property="regionValue" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="getUserByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select t.*, DATE_FORMAT(entry_date,'%y%y-%m-%d') entryDate FROM t_s_bf_user t
+        where name = #{name,jdbcType=VARCHAR}
+    </select>
+
+    <select id="getUser" resultType="com.example.demo.bean.User" parameterType="java.util.Map">
+            SELECT t.*, DATE_FORMAT(entry_date,'%y%y-%m-%d') entryDate FROM t_s_bf_user t
+            <where>
+                <if test="name != null and name != ''">
+                    `name` like concat('%', #{name,jdbcType=VARCHAR},'%')
+                </if>
+                <if test="orientation != null and orientation != ''">
+                    and `orientation` like concat('%', #{orientation,jdbcType=VARCHAR},'%')
+                </if>
+                <if test="entryDate != null and entryDate != ''">
+                    and `entry_date` like concat('%', #{entryDate,jdbcType=VARCHAR},'%')
+                </if>
+                <if test="provinceValue != null and provinceValue != ''">
+                    and `province_value` like concat('%', #{provinceValue,jdbcType=VARCHAR},'%')
+                </if>
+                <if test="cityValue != null and cityValue != ''">
+                    and `city_value` like concat('%', #{cityValue,jdbcType=VARCHAR},'%')
+                </if>
+                <if test="regionValue != null and regionValue != ''">
+                    and `region_value` like concat('%', #{regionValue,jdbcType=VARCHAR},'%')
+                </if>
+            </where>
+    </select>
+
+    <select id="queryByName" resultType="java.lang.String" parameterType="java.lang.String">
+        SELECT DISTINCT t.name FROM t_s_bf_user t
+        <where>
+            <if test="name != null and name != ''">
+                `name` like concat('%', #{name,jdbcType=VARCHAR},'%')
+            </if>
+        </where>
+    </select>
+
+    <!--<delete id="deleteById" parameterType="java.lang.Integer">
+        DELETE FROM user WHERE id = #{id}
+    </delete>-->
+
+    <delete id="deleteByBatch" parameterType="java.util.List">
+        delete from t_s_bf_user where id in
+        <foreach item="item" collection="ids" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <!--新增前查询是否已有用户存在-->
+    <select id="insertDuplicateByPhone" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(1) as count from t_s_bf_user where phone = #{phone,jdbcType=VARCHAR}
+    </select>
+
+    <!--新增前查询是否已有用户存在-->
+    <select id="insertDuplicateByEmail" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(1) as count from t_s_bf_user where email = #{email,jdbcType=VARCHAR}
+    </select>
+
+    <insert id="insert" parameterType="com.example.demo.bean.User">
+        INSERT INTO t_s_bf_user (
+          name,
+          gender,
+          age,
+          entry_date,
+          email,
+          phone,
+          orientation,
+          plan,
+          introduction,
+          province_value,
+          city_value,
+          region_value
+          )
+        VALUES	(
+
+          #{name,jdbcType=VARCHAR},
+          #{gender,jdbcType=VARCHAR},
+          #{age,jdbcType=INTEGER},
+          #{entryDate,jdbcType=VARCHAR},
+          #{email,jdbcType=VARCHAR},
+          #{phone,jdbcType=VARCHAR},
+          #{orientation,jdbcType=VARCHAR},
+          #{plan,jdbcType=VARCHAR},
+          #{introduction,jdbcType=VARCHAR},
+          #{provinceValue,jdbcType=VARCHAR},
+          #{cityValue,jdbcType=VARCHAR},
+          #{regionValue,jdbcType=VARCHAR}
+           )
+
+    </insert>
+
+    <insert id="insertUser" parameterType="com.example.demo.bean.User">
+        INSERT INTO t_s_bf_user (
+          name,
+          gender,
+          age,
+          entry_date,
+          email,
+          phone,
+          orientation,
+          plan,
+          introduction,
+          province_value,
+          city_value,
+          region_value
+          )
+        VALUES	(
+
+          #{name,jdbcType=VARCHAR},
+          #{gender,jdbcType=VARCHAR},
+          #{age,jdbcType=INTEGER},
+          #{entryDate,jdbcType=VARCHAR},
+          #{email,jdbcType=VARCHAR},
+          #{phone,jdbcType=VARCHAR},
+          #{orientation,jdbcType=VARCHAR},
+          #{plan,jdbcType=VARCHAR},
+          #{introduction,jdbcType=VARCHAR},
+          #{provinceValue,jdbcType=VARCHAR},
+          #{cityValue,jdbcType=VARCHAR},
+          #{regionValue,jdbcType=VARCHAR}
+           )
+
+    </insert>
+
+    <update id="updateUserById" parameterType="com.example.demo.bean.User">
+        UPDATE t_s_bf_user
+            SET
+                name = #{name,jdbcType=VARCHAR},
+                gender = #{gender,jdbcType=VARCHAR},
+                age = #{age,jdbcType=INTEGER},
+                entry_date = #{entryDate,jdbcType=VARCHAR},
+                email = #{email,jdbcType=VARCHAR},
+                phone = #{phone,jdbcType=VARCHAR},
+                orientation = #{orientation,jdbcType=VARCHAR},
+                plan = #{plan,jdbcType=VARCHAR},
+                introduction = #{introduction,jdbcType=VARCHAR},
+                province_value = #{provinceValue,jdbcType=VARCHAR},
+                city_value = #{cityValue,jdbcType=VARCHAR},
+                region_value = #{regionValue,jdbcType=VARCHAR}
+        WHERE
+        id = #{id};
+    </update>
+
+    <!--<update id="updateUserById" parameterType="com.example.demo.bean.User">
+        UPDATE t_s_bf_user
+            SET
+        <if test="name != null and name != ''">
+            name = #{name,jdbcType=VARCHAR}
+        </if>
+        <if test="gender != null and gender != ''">
+            and gender = #{gender,jdbcType=VARCHAR}
+        </if>
+        <if test="age != null and age != ''">
+            and age = #{age,jdbcType=INTEGER}
+        </if>
+        <if test="entryDate != null and entryDate != ''">
+            and entry_date = #{entryDate,jdbcType=VARCHAR}
+        </if>
+        <if test="email != null and email != ''">
+            and email = #{email,jdbcType=VARCHAR}
+        </if>
+        <if test="phone != null and phone != ''">
+            and phone = #{phone,jdbcType=VARCHAR}
+        </if>
+        <if test="orientation != null and orientation != ''">
+            and orientation = #{orientation,jdbcType=VARCHAR}
+        </if>
+        <if test="plan != null and plan != ''">
+            and plan = #{plan,jdbcType=VARCHAR}
+        </if>
+        <if test="provinceValue != null and provinceValue != ''">
+            and province_value = #{provinceValue,jdbcType=VARCHAR}
+        </if>
+        <if test="cityValue != null and cityValue != ''">
+            and city_value = #{cityValue,jdbcType=VARCHAR}
+        </if>
+        <if test="regionValue != null and regionValue != ''">
+            and region_value = #{regionValue,jdbcType=VARCHAR}
+        </if>
+        WHERE
+            id = #{id};
+    </update>-->
+
+     <!--查询是否存在相同的代码-->
+    <select id="queryDuplicateByPhone" parameterType="map" resultType="java.lang.Integer">
+		select count(1) as count from t_s_bf_user where phone = #{phone,jdbcType=VARCHAR} and id != #{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="queryDuplicateByEmail" parameterType="map" resultType="java.lang.Integer">
+		select count(1) as count from t_s_bf_user where email = #{email,jdbcType=VARCHAR} and id != #{id,jdbcType=INTEGER}
+    </select>
+
+    <!--<select id="ifDuplicate" parameterType="com.example.demo.bean.User" resultType="java.lang.Integer">
+		select count(1) as count from t_s_bf_user where phone = #{phone,jdbcType=VARCHAR} or email = #{email,jdbcType=VARCHAR}
+    </select>-->
+
+    <select id="queryPage" parameterType="map" resultMap="BaseResultMap">
+        SELECT t.*, DATE_FORMAT(entry_date,'%y%y-%m-%d') entryDate FROM t_s_bf_user t
+        <where>
+            <if test="name != null and name != ''">
+                `name` like concat('%', #{name,jdbcType=VARCHAR},'%')
+            </if>
+            <if test="orientation != null and orientation != ''">
+               and `orientation` like concat('%', #{orientation,jdbcType=VARCHAR},'%')
+            </if>
+            <if test="entryDate != null and entryDate != ''">
+               and `entry_date` like concat('%', #{entryDate,jdbcType=VARCHAR},'%')
+            </if>
+            <if test="provinceValue != null and provinceValue != ''">
+                and `province_value` like concat('%', #{provinceValue,jdbcType=VARCHAR},'%')
+            </if>
+            <if test="cityValue != null and cityValue != ''">
+                and `city_value` like concat('%', #{cityValue,jdbcType=VARCHAR},'%')
+            </if>
+            <if test="regionValue != null and regionValue != ''">
+                and `region_value` like concat('%', #{regionValue,jdbcType=VARCHAR},'%')
+            </if>
+
+        </where>
+        order by entry_date desc
+    </select>
+
+</mapper>
